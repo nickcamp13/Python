@@ -1,47 +1,57 @@
 # can also create lists using constructor "list()"
-myList = []
-anotherList = list()
+myList = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M"]
+anotherList = list(("N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"))
 
-for i in range(0, 100):
-    myList.append(i)
-    
+
+# List Attributes
 print("myList: " + str(myList))
 print("Length of list: " + str(len(myList)))
 print("Type of list: " + str(type(myList)))
 
-# There are 4 collection data types in Python
-# lists
-# tuples
-# sets
-# dictionaries
 
-print("myList[25] = " + str(myList[25]))
-print("myList[-1] = " + str(myList[-1]))
-print("myList[43:70] = " + str(myList[43:70]))
+# Accessors
+print(f"myList[2] = {myList[2]}")
+print(f"myList[-1] = {myList[-1]}")
+print(f"myList[4:7] = {myList[4:7]}")
 
-if 89 in myList:
-    print("89 is in myList")
+
+
+letter = "G"
+if letter in myList:
+    print(f"{letter} is in myList")
 else:
-    print("89 is not in myList")
-    
-if 101 in myList:
-    print("101 is in myList")
-else:
-    print("101 is not in myList")
-    
-for i in range(100, 200):
-    # Add an item to the end of the list.
-    anotherList.append(i)
-    
-print("anotherList: ")
-print(anotherList)
+    print(f"{letter} is not in myList")
 
+
+
+print(f"anotherList: {str(anotherList)}")
 # Extend the list by appending all the items from the iterable.
 myList.extend(anotherList)
-print("myList extended with anotherList: " + str(myList))
+print(f"myList extended with anotherList: {str(myList)}")
+
 
 # Insert an item at a given position. 
 myList.insert(0, 'x')
+print(f"myList inserted 'x' at index 0: {str(myList)}")
+
+
 
 # Remove the first item from the list whose value is equal to x.
 myList.remove('x')
+print("myList removed 'x': " + str(myList))
+
+
+# Pop (remove) element from list, no parameter means remove ending
+myList.pop(1)
+myList.pop()
+print("myList popped item at index 1 and at the end: " + str(myList))
+
+
+
+del myList[13]      # equivalent to myList.pop(13)
+del anotherList     # anotherList no longer defined
+print(f"myList removed item at index 13: {str(myList)}")
+
+
+# returns the number of specified parameter in the list
+print(f"Number of Cs in myList: {str(myList.count('C'))}")
